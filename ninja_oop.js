@@ -4,6 +4,7 @@ class Ninja{
         this.health = health;
         this.speed = speed;
         this.strength = strength;
+        return this;
     }
 
     sayName(){
@@ -15,6 +16,11 @@ class Ninja{
         console.log(`This Ninja is ${this.name}, and this Ninja's stats are; Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
         return this;
     }
+
+    drinkSake(){
+        this.health += 10;
+        return this;
+    }
 }
 const ninja1 = new Ninja("Hyabusa");
-ninja1.sayName();
+ninja1.sayName().showStats().drinkSake().showStats();
